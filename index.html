@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A searchable digital archive for African diaspora history." />
+  <title>African Diaspora History Archive</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="African Diaspora History Archive home">
+      <span class="brand-mark">AD</span>
+      <span><strong>African Diaspora</strong><small>History Archive</small></span>
+    </a>
+    <nav>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a class="button-small" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">OPEN DIGITAL ARCHIVE</div>
+      <h1>History dispersed across oceans.<br><em>Records brought together.</em></h1>
+      <p class="hero-copy">Search digitised records, photographs, maps, newspapers, registers, oral histories and research collections relating to Africa and its global diasporas.</p>
+      <form id="hero-search" class="hero-search">
+        <label class="sr-only" for="hero-q">Search the archive</label>
+        <input id="hero-q" type="search" placeholder="Search a person, place, ship, estate, event, keyword…" />
+        <button type="submit">Search catalogue</button>
+      </form>
+      <div class="quick-links"><span>Browse:</span><a href="#catalogue" data-quick="Caribbean">Caribbean</a><a href="#catalogue" data-quick="West Africa">West Africa</a><a href="#catalogue" data-quick="Slavery">Slavery</a><a href="#catalogue" data-quick="Migration">Migration</a><a href="#catalogue" data-quick="Family history">Family history</a></div>
+    </section>
+
+    <section class="stats" aria-label="Archive statistics">
+      <div><strong id="stat-records">0</strong><span>catalogue records</span></div>
+      <div><strong id="stat-collections">0</strong><span>collections</span></div>
+      <div><strong id="stat-places">0</strong><span>places represented</span></div>
+      <div><strong>Git-backed</strong><span>versioned & preservable</span></div>
+    </section>
+
+    <section id="collections" class="section">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE</span><h2>Featured collections</h2></div>
+        <p>Organise material by provenance, research project, donor, geography, institution or subject.</p>
+      </div>
+      <div id="collection-grid" class="collection-grid"></div>
+    </section>
+
+    <section id="catalogue" class="catalogue-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">DISCOVER</span><h2>Search the catalogue</h2></div>
+        <p>Keyword search across titles, descriptions, people, places, subjects and archival references.</p>
+      </div>
+
+      <div class="catalogue-layout">
+        <aside class="filters">
+          <div class="filter-header"><strong>Refine results</strong><button id="clear-filters" type="button">Clear</button></div>
+          <label>Collection<select id="filter-collection"><option value="">All collections</option></select></label>
+          <label>Place<select id="filter-place"><option value="">All places</option></select></label>
+          <label>Record type<select id="filter-type"><option value="">All types</option></select></label>
+          <label>Subject<select id="filter-subject"><option value="">All subjects</option></select></label>
+          <div class="date-row">
+            <label>From<input id="filter-from" type="number" inputmode="numeric" placeholder="1700" /></label>
+            <label>To<input id="filter-to" type="number" inputmode="numeric" placeholder="1950" /></label>
+          </div>
+          <label class="checkbox"><input id="filter-digital" type="checkbox" /> Digital item available</label>
+        </aside>
+
+        <div class="results-area">
+          <form id="catalogue-search" class="catalogue-search">
+            <input id="catalogue-q" type="search" placeholder="Search the catalogue" />
+            <button>Search</button>
+          </form>
+          <div class="results-tools">
+            <div><strong id="result-count">0</strong> results <span id="active-query"></span></div>
+            <label>Sort <select id="sort-results"><option value="relevance">Relevance</option><option value="date-asc">Date: oldest</option><option value="date-desc">Date: newest</option><option value="title">Title A–Z</option></select></label>
+          </div>
+          <div id="results" class="results"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div><span class="eyebrow">ABOUT THE ARCHIVE</span><h2>Built for evidence, context and citation.</h2></div>
+      <div class="about-copy">
+        <p>Every item has a stable catalogue ID, title, date, description, place, people, subject terms, collection, source reference, rights statement and links to digital files where available.</p>
+        <p>The archive is deliberately transparent: metadata lives in the same GitHub repository as the website, so changes are versioned and the catalogue can be backed up, forked or preserved independently.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">AD</span><span><strong>African Diaspora</strong><small>History Archive</small></span></div>
+    <p>Open history infrastructure. Catalogue data stored as structured files in Git.</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
